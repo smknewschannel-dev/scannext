@@ -1,10 +1,10 @@
 # scannext
 
-OT Security Suite starter project (React + Node API Gateway + Go services + Postgres + Redis) with device discovery, professional UI, and live nearby network scan support.
+OT Security Suite starter project (React + Node API Gateway + Go services + Postgres + Redis) with device discovery, professional UI, and optional nearby network scan support.
 
 ## Project structure
 
-- `apps/web` — React + Vite dashboard UI with filters, KPIs, and nearby scan table
+- `apps/web` — React + Vite dashboard UI with filters, KPIs, device finder, and nearby scan table
 - `apps/api-gateway` — Node/Express API gateway with OT demo inventory + live network scan endpoint
 - `services/asset-scanner` — Go health service
 - `services/rule-engine` — Go health service
@@ -25,7 +25,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-## Demo endpoints
+## Endpoints
 
 - Web UI: http://localhost:5173
 - API health: http://localhost:8080/health
@@ -33,6 +33,8 @@ docker compose up -d
 - Device finder API: http://localhost:8080/devices
 - Alerts API: http://localhost:8080/alerts
 - Nearby scan API: http://localhost:8080/network/scan
+- Asset scanner health: http://localhost:8090/health
+- Rule engine health: http://localhost:8091/health
 
 ### Device finder query params
 
