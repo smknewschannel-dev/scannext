@@ -1,0 +1,22 @@
+name: conflict-markers
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - work
+
+jobs:
+  check-conflict-markers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify no merge conflict markers
+        run: |
+          if grep -R -nE '^(<<<<<<<|=======|>>>>>>>)' README.md apps/api-gateway/src/index.ts apps/web/src/App.tsx apps/web/src/styles.css docker-compose.yml Makefile; then
+            echo "Found unresolved conflict markers"
+            exit 1
+          fi
