@@ -1,4 +1,4 @@
-.PHONY: up down logs check-conflicts resolve-pr-conflicts
+.PHONY: up down logs merge-main check-conflicts resolve-pr-conflicts
 
 up:
 	docker compose up -d
@@ -8,6 +8,10 @@ down:
 
 logs:
 	docker compose logs -f --tail=100
+
+merge-main:
+	@git fetch origin
+	@git merge origin/main
 
 check-conflicts:
 	@! rg -n "^(<<<<<<<|=======|>>>>>>>)" README.md apps/api-gateway/src/index.ts apps/web/src/App.tsx apps/web/src/styles.css docker-compose.yml

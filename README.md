@@ -31,9 +31,8 @@ docker compose up -d
 If PR page shows conflicts in `Makefile`, `README.md`, `apps/api-gateway/src/index.ts`, `apps/web/src/App.tsx`, `apps/web/src/styles.css`, `docker-compose.yml`, run locally:
 
 ```bash
-git fetch origin
 git checkout <your-branch>
-git merge origin/main
+make merge-main
 make resolve-pr-conflicts
 make check-conflicts
 git commit -m "Resolve merge conflicts with current branch versions"
