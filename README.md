@@ -13,7 +13,7 @@ OT Security Suite starter project (React + Node API Gateway + Go services + Post
 
 ## Prerequisites
 
-- Docker Desktop (you mentioned 4.66.1)
+- Docker Desktop (4.66.1 works)
 - Node.js 22+
 - Go 1.23+
 
@@ -24,7 +24,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-### Endpoints
+## Endpoints
 
 - Web: http://localhost:5173
 - API Gateway health: http://localhost:8080/health
